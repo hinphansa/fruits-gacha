@@ -4,15 +4,17 @@ import styled from "styled-components";
 function Header() {
   return (
     <StyledHeader>
-      <div>
-        <span>F</span>
-        <span>R</span>
-        <span>U</span>
-        <span>I</span>
-        <span>T</span>
-        <span>S</span>
-        <span>GACHA</span>
-      </div>
+      <a href="/">
+        <div>
+          <span>F</span>
+          <span>R</span>
+          <span>U</span>
+          <span>I</span>
+          <span>T</span>
+          <span>S</span>
+          <span>GACHA</span>
+        </div>
+      </a>
     </StyledHeader>
   );
 }
@@ -27,7 +29,13 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: flex-start;
 
-  box-shadow: rgba(0, 0, 0, 0.15) 0 1px;
+  background-color: white;
+  box-shadow: 0 0 4px 0 rgba(31, 38, 135, 0.5);
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 
   div {
     margin-left: 24px;

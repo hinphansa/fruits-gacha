@@ -2,41 +2,50 @@ export const R_fruit = [
   {
     "id": 0,
     "name": "Banana",
-    "img": "../asset/R_rate/banana.jpg"
+    "img": require("../asset/R_rate/banana.jpg").default,
+    "thumbnail": require("../asset/R_rate/banana_thumbnail.jpg").default
   },
   {
     "id": 1,
     "name": "Lemon",
-    "img": "../asset/R_rate/lemon.jpg"
+    "img": require("../asset/R_rate/lemon.jpg").default,
+    "thumbnail": require("../asset/R_rate/lemon_thumbnail.jpg").default
   },
   {
     "id": 2,
     "name": "Mango",
-    "img": "../asset/R_rate/mango.jpg"
+    "img": require("../asset/R_rate/mango.jpg").default,
+    "thumbnail": require("../asset/R_rate/mango_thumbnail.jpg").default
   },
   {
     "id": 3,
     "name": "Orange",
-    "img": "../asset/R_rate/orange.jpg"
+    "img": require("../asset/R_rate/orange.jpg").default,
+    "thumbnail": require("../asset/R_rate/orange_thumbnail.jpg").default,
   },
   {
     "id": 4,
     "name": "Grapes",
-    "img": "../asset/R_rate/grapes.jpg"
+    "img": require("../asset/R_rate/grapes.jpg").default,
+    "thumbnail": require("../asset/R_rate/grapes_thumbnail.jpg").default
   },
   {
     "id": 5,
     "name": "Durian",
-    "img": "../asset/R_rate/durian.jpg"
+    "img": require("../asset/R_rate/durian.jpg").default,
+    "thumbnail": require("../asset/R_rate/durian_thumbnail.jpg").default
   },
   {
     "id": 6,
     "name": "Blueberries",
-    "img": "../asset/R_rate/blueberries.jpg"
+    "img": require("../asset/R_rate/blueberries.jpg").default,
+    "thumbnail": require("../asset/R_rate/blueberries_thumbnail.jpg").default
   },
   {
     "id": 7,
     "name": "Mangosteen",
-    "img": "../asset/R_rate/mangosteen.jpg"
+    "img": require("../asset/R_rate/mangosteen.jpg").default,
+    "thumbnail": require("../asset/R_rate/mangosteen_thumbnail.jpg").default
   },
 ]
+
