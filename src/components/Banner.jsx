@@ -70,7 +70,7 @@ const BannerContainer = styled.div`
 
 const BannerContent = styled.div`
   min-width: 55%;
-  max-width: 70%;
+  max-width: 75%;
 
   margin: 20px 0;
   padding: 30px 30px;
@@ -109,6 +109,10 @@ const FruitCards = styled.div`
   gap: 10px;
   display: flex;
   flex-wrap: wrap;
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    justify-content: center;
+  }
 `;
 
 export { Banner };

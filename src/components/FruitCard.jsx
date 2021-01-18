@@ -39,8 +39,6 @@ const CardContainer = styled.div`
   border-radius: 10px;
   box-sizing: border-box;
 
-  transition: 1.3s all ease;
-
   color: white;
   background-color: ${({ rate, theme }) => {
     switch (rate) {

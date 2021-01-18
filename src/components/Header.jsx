@@ -23,6 +23,7 @@ const StyledHeader = styled.div`
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   a {
     color: black;
@@ -58,10 +59,6 @@ const StyledHeader = styled.div`
       margin-left: 10px;
       letter-spacing: 1px;
     }
-  }
-
-  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    justify-content: center;
   }
 `;
 
