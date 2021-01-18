@@ -6,11 +6,14 @@ import { FruitCard } from "./FruitCard";
 import { R_fruit } from "../data/R_fruits";
 import { SR_fruit } from "../data/SR_fruits";
 import { SSR_fruit } from "../data/SSR_fruits";
+import { useTheme } from "@material-ui/core";
 
 function Banner() {
+  const theme = useTheme();
+
   return (
     <BannerContainer display="flex">
-      <BannerContent>
+      <BannerContent theme={theme}>
         <p>
           Welcome to<b> FRUITS GACHA</b>
         </p>
@@ -60,7 +63,7 @@ function Banner() {
 
 const BannerContainer = styled.div`
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 
   font-family: "Inter";
 
@@ -77,22 +80,29 @@ const BannerContent = styled.div`
   padding: 30px 30px;
   border-radius: 10px;
 
-  backdrop-filter: blur(7.5px);
-  background: rgba(0, 2, 90, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+
+  p {
+    margin-top: 0;
+    font-size: 24px;
+  }
 
   .rate {
     margin: 10px 0;
     font-weight: 600;
 
     :nth-of-type(1) {
-      color: #0096c7;
+      color: ${(props) => props.theme.rarity.R};
     }
     :nth-of-type(3) {
-      color: #9d4edd;
+      color: ${(props) => props.theme.rarity.SR};
     }
     :nth-of-type(5) {
-      color: #ff951b;
+      color: ${(props) => props.theme.rarity.SSR};
     }
   }
 `;

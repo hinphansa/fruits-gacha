@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ReactCardFlip from "react-card-flip";
+import { useTheme } from "@material-ui/core";
 
 function FruitCard(props) {
+  const theme = useTheme();
   const [isFlipped, setIsFlipped] = useState(false);
   const { fruit, flippable = true, size = "s", rate } = props;
 
@@ -11,6 +13,7 @@ function FruitCard(props) {
       onClick={() => flippable && setIsFlipped(!isFlipped)}
       size={size}
       rate={rate}
+      theme={theme}
     >
       <ReactCardFlip
         isFlipped={isFlipped}
@@ -40,14 +43,14 @@ const CardContainer = styled.div`
   box-sizing: border-box;
 
   color: white;
-  background-color: ${(props) => {
-    switch (props.rate) {
+  background-color: ${({ rate, theme }) => {
+    switch (rate) {
       case "R":
-        return "#0096c7";
+        return theme.rarity.R;
       case "SR":
-        return "#9d4edd";
+        return theme.rarity.SR;
       case "SSR":
-        return "#ff951b";
+        return theme.rarity.SSR;
       default:
         return "#fdfffc";
     }
