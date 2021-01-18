@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ReactCardFlip from "react-card-flip";
-import { useTheme } from "@material-ui/core";
 
 function FruitCard(props) {
-  const theme = useTheme();
   const [isFlipped, setIsFlipped] = useState(false);
   const { fruit, flippable = true, size = "s", rate } = props;
 
@@ -13,7 +11,6 @@ function FruitCard(props) {
       onClick={() => flippable && setIsFlipped(!isFlipped)}
       size={size}
       rate={rate}
-      theme={theme}
     >
       <ReactCardFlip
         isFlipped={isFlipped}
@@ -42,6 +39,8 @@ const CardContainer = styled.div`
   border-radius: 10px;
   box-sizing: border-box;
 
+  transition: 1.3s all ease;
+
   color: white;
   background-color: ${({ rate, theme }) => {
     switch (rate) {
@@ -58,7 +57,7 @@ const CardContainer = styled.div`
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
 
   :hover {
-    cursor: pointer;
+    cursor: ${(props) => (props.size === "s" ? "default" : "pointer")};
   }
 `;
 

@@ -6,14 +6,11 @@ import { FruitCard } from "./FruitCard";
 import { R_fruit } from "../data/R_fruits";
 import { SR_fruit } from "../data/SR_fruits";
 import { SSR_fruit } from "../data/SSR_fruits";
-import { useTheme } from "@material-ui/core";
 
 function Banner() {
-  const theme = useTheme();
-
   return (
-    <BannerContainer display="flex">
-      <BannerContent theme={theme}>
+    <BannerContainer>
+      <BannerContent>
         <p>
           Welcome to<b> FRUITS GACHA</b>
         </p>
@@ -63,28 +60,27 @@ function Banner() {
 
 const BannerContainer = styled.div`
   width: 100%;
-  padding: 20px 0;
+  min-height: 70vh;
 
   font-family: "Inter";
 
   display: flex;
-  align-items: center;
-  box-sizing: border-box;
   justify-content: center;
 `;
 
 const BannerContent = styled.div`
-  width: 55%;
-  min-height: 70vh;
+  min-width: 55%;
+  max-width: 70%;
 
+  margin: 20px 0;
   padding: 30px 30px;
   border-radius: 10px;
 
   border-radius: 10px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 18px 0 rgba(31, 38, 135, 0.6);
 
   p {
     margin-top: 0;

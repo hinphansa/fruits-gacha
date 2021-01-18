@@ -4,8 +4,7 @@ import { Header } from "./components/Header";
 import { Banner } from "./components/Banner";
 import { ButtonPanel } from "./components/ButtonPanel";
 
-import { createMuiTheme } from "@material-ui/core";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   return (
@@ -17,12 +16,18 @@ function App() {
   );
 }
 
-const theme = createMuiTheme({
+const theme = {
   rarity: {
     R: "#0096c7",
     SR: "#4e148c",
     SSR: "#e36414",
   },
-});
+  breakpoints: {
+    sm: "600px",
+    md: "960px",
+    lg: "1280px",
+    xl: "1920px",
+  },
+};
 
 export default App;

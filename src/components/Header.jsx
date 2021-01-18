@@ -3,49 +3,38 @@ import styled from "styled-components";
 
 function Header() {
   return (
-    <StyledHeader>
+    <StyledHeader component="header">
       <a href="/">
-        <div>
-          <span>F</span>
-          <span>R</span>
-          <span>U</span>
-          <span>I</span>
-          <span>T</span>
-          <span>S</span>
-          <span>GACHA</span>
-        </div>
+        <span>F</span>
+        <span>R</span>
+        <span>U</span>
+        <span>I</span>
+        <span>T</span>
+        <span>S</span>
+        <span>GACHA</span>
       </a>
     </StyledHeader>
   );
 }
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.div`
   width: 100%;
-  height: 100px;
-
   font-size: 2rem;
 
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  background-color: white;
-  /* box-shadow: 0 0 4px 0 rgba(31, 38, 135, 0.5); */
 
   a {
     color: black;
+    padding: 10px 20px;
     text-decoration: none;
-  }
-
-  div {
-    margin-left: 24px;
   }
 
   span {
     font-weight: 600;
     user-select: none;
     letter-spacing: 3px;
-    font-family: "Fredoka One", cursive;
+    font-family: "Fredoka One";
 
     :nth-child(1) {
       color: #f94144;
@@ -69,6 +58,10 @@ const StyledHeader = styled.header`
       margin-left: 10px;
       letter-spacing: 1px;
     }
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    justify-content: center;
   }
 `;
 
