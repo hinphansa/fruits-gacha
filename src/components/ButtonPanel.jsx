@@ -1,24 +1,55 @@
 import React from "react";
 import styled from "styled-components";
+import { StyledButton } from "./shared/StyledButton";
 
 function ButtonPanel() {
   return (
     <StyledButtonPanel>
-      <button>x</button>
-      <button>x</button>
-      <button>x</button>
-      <button>x</button>
+      <ButtonPanelContent>
+        <div>
+          <StyledButton>Reset</StyledButton>
+          <StyledButton>History</StyledButton>
+        </div>
+        <div>
+          <StyledButton>Roll</StyledButton>
+          <StyledButton>Roll x10</StyledButton>
+        </div>
+      </ButtonPanelContent>
     </StyledButtonPanel>
   );
 }
 
 const StyledButtonPanel = styled.div`
   width: 100%;
+  margin-bottom: 20px;
 
   display: flex;
   justify-content: center;
+`;
 
-  /* background-color: red; */
+const ButtonPanelContent = styled.div`
+  width: calc(55% + 80px);
+  max-width: 1030px;
+
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+  }
+
+  div button {
+    margin: 0 10px;
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    div {
+      flex-direction: column;
+    }
+    div button {
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export { ButtonPanel };

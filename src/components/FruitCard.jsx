@@ -35,11 +35,12 @@ const CardContainer = styled.div`
   height: ${(props) => (props.size === "s" ? "160px" : "156px")};
 
   padding: 5px;
+  color: white;
   overflow: hidden;
   border-radius: 10px;
   box-sizing: border-box;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
 
-  color: white;
   background-color: ${({ rate, theme }) => {
     switch (rate) {
       case "R":
@@ -52,7 +53,6 @@ const CardContainer = styled.div`
         return "#fdfffc";
     }
   }};
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
 
   :hover {
     cursor: ${(props) => (props.size === "s" ? "default" : "pointer")};

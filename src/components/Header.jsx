@@ -27,7 +27,7 @@ const StyledHeader = styled.div`
 
   a {
     color: black;
-    padding: 10px 20px;
+    padding: 15px 20px;
     text-decoration: none;
   }
 

@@ -69,18 +69,19 @@ const BannerContainer = styled.div`
 `;
 
 const BannerContent = styled.div`
-  min-width: 55%;
-  max-width: 75%;
+  width: 55%;
+  max-width: 950px;
 
   margin: 20px 0;
-  padding: 30px 30px;
+  padding: 30px;
   border-radius: 10px;
 
   border-radius: 10px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 2px 18px 0 rgba(31, 38, 135, 0.6);
+  /* border: solid 1px rgba(31, 38, 135, 0.6); */
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.6);
 
   p {
     margin-top: 0;
@@ -110,7 +111,7 @@ const FruitCards = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     justify-content: center;
   }
 `;
