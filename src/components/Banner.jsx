@@ -20,7 +20,12 @@ function Banner() {
         <FruitCards>
           {SSR_fruits.map((fruit, index) => {
             return (
-              <FruitCard key={`R_fruit-${index}`} rate="SSR" fruit={fruit} />
+              <FruitCard
+                key={`R_fruit-${index}`}
+                rate="SSR"
+                fruit={fruit}
+                thumbnail={true}
+              />
             );
           })}
         </FruitCards>
@@ -28,7 +33,12 @@ function Banner() {
         <FruitCards>
           {SR_fruits.map((fruit, index) => {
             return (
-              <FruitCard key={`R_fruit-${index}`} rate="SR" fruit={fruit} />
+              <FruitCard
+                key={`R_fruit-${index}`}
+                rate="SR"
+                fruit={fruit}
+                thumbnail={true}
+              />
             );
           })}
         </FruitCards>
@@ -36,7 +46,12 @@ function Banner() {
         <FruitCards>
           {R_fruits.map((fruit, index) => {
             return (
-              <FruitCard key={`R_fruit-${index}`} rate="R" fruit={fruit} />
+              <FruitCard
+                key={`R_fruit-${index}`}
+                rate="R"
+                fruit={fruit}
+                thumbnail={true}
+              />
             );
           })}
         </FruitCards>

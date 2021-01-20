@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 
 const StyledButton = styled(Button)`
-  width: 90px;
+  min-width: 90px;
   padding: 12px 12px;
 
   border: 0;

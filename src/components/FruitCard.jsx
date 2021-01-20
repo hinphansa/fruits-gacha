@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ReactCardFlip from "react-card-flip";
 
 function FruitCard(props) {
-  const { fruit, front = true, size = "s" } = props;
+  const { fruit, open, front = true, thumbnail = false } = props;
   const [isFlipped, setIsFlipped] = useState(!front);
 
+  useEffect(() => {
+    if (open) {
+      setIsFlipped(false);
+    }
+  }, [open]);
+
   return (
-    <CardContainer onClick={() => setIsFlipped(false)} size={size}>
+    <CardContainer onClick={() => setIsFlipped(false)} thumbnail={thumbnail}>
       <ReactCardFlip
         isFlipped={isFlipped}
         containerStyle={{
@@ -27,8 +33,8 @@ function FruitCard(props) {
 
 // card ratio = 9 : 13
 const CardContainer = styled.div`
-  ${({ size }) => {
-    if (size === "s") {
+  ${({ thumbnail }) => {
+    if (thumbnail) {
       return `width: 110px;
               height: 180px;
               font-size: 1rem;
@@ -46,15 +52,12 @@ const CardContainer = styled.div`
     }
   }}
 
-  /* display: flex; */
-  flex-basis: auto;
+  display: flex;
 
-  position: relative;
   border-radius: 10px;
 
   color: white;
   font-weight: 600;
-  background: green;
 `;
 
 const FrontCard = styled.div`
@@ -103,7 +106,6 @@ const BackCard = styled.div`
   border-radius: 10px;
   transition: 0.3s ease-out;
 
-  background: red;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${require("../asset/backcard.png").default});

@@ -23,10 +23,11 @@ const theme = {
     SSR: "#e36414",
   },
   breakpoints: {
-    sm: "600px",
-    md: "768px",
-    lg: "1024px",
-    xl: "1240px",
+    sm: "599px",
+    md: "767px",
+    lg: "1023px",
+    xl: "1239px",
+    xxl: "1439px",
   },
 };
 

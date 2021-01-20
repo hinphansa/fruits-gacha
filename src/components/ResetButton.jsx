@@ -1,12 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledButton } from "./shared/StyledButton";
+import {
+  Slide,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+} from "@material-ui/core";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function ResetButton() {
+  const [open, setOpen] = useState(false);
+
   const clearHistory = () => {
-    console.log(window.localStorage.getItem("history"));
     window.localStorage.removeItem("history");
+    setOpen(true);
   };
-  return <StyledButton onClick={clearHistory}>Reset</StyledButton>;
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <StyledButton onClick={clearHistory}>Clear</StyledButton>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        keepMounted
+        TransitionComponent={Transition}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>Notification</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Your history has successfully cleared.
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
 }
 
 export { ResetButton };
