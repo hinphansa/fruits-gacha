@@ -3,9 +3,11 @@ import styled from "styled-components";
 
 import { FruitCard } from "./FruitCard";
 
-import { R_fruit } from "../data/R_fruits";
-import { SR_fruit } from "../data/SR_fruits";
-import { SSR_fruit } from "../data/SSR_fruits";
+import { getRFruits, getSRFruits, getSSRFruits } from "../data/fruits";
+
+const R_fruits = getRFruits();
+const SR_fruits = getSRFruits();
+const SSR_fruits = getSSRFruits();
 
 function Banner() {
   return (
@@ -14,42 +16,27 @@ function Banner() {
         <p>
           Welcome to<b> FRUITS GACHA</b>
         </p>
-        <div className="rate">R - 80%</div>
+        <div className="rate">SSR - 3%</div>
         <FruitCards>
-          {R_fruit.map((fruit, index) => {
+          {SSR_fruits.map((fruit, index) => {
             return (
-              <FruitCard
-                key={`R_fruit-${index}`}
-                rate="R"
-                fruit={fruit}
-                flippable={false}
-              />
+              <FruitCard key={`R_fruit-${index}`} rate="SSR" fruit={fruit} />
             );
           })}
         </FruitCards>
         <div className="rate">SR - 17%</div>
         <FruitCards>
-          {SR_fruit.map((fruit, index) => {
+          {SR_fruits.map((fruit, index) => {
             return (
-              <FruitCard
-                key={`R_fruit-${index}`}
-                rate="SR"
-                fruit={fruit}
-                flippable={false}
-              />
+              <FruitCard key={`R_fruit-${index}`} rate="SR" fruit={fruit} />
             );
           })}
         </FruitCards>
-        <div className="rate">SSR - 3%</div>
+        <div className="rate">R - 80%</div>
         <FruitCards>
-          {SSR_fruit.map((fruit, index) => {
+          {R_fruits.map((fruit, index) => {
             return (
-              <FruitCard
-                key={`R_fruit-${index}`}
-                rate="SSR"
-                fruit={fruit}
-                flippable={false}
-              />
+              <FruitCard key={`R_fruit-${index}`} rate="R" fruit={fruit} />
             );
           })}
         </FruitCards>
@@ -92,13 +79,13 @@ const BannerContent = styled.div`
     margin: 10px 0;
     font-weight: 600;
 
-    :nth-of-type(1) {
+    :nth-of-type(5) {
       color: ${(props) => props.theme.rarity.R};
     }
     :nth-of-type(3) {
       color: ${(props) => props.theme.rarity.SR};
     }
-    :nth-of-type(5) {
+    :nth-of-type(1) {
       color: ${(props) => props.theme.rarity.SSR};
     }
   }
@@ -111,7 +98,7 @@ const FruitCards = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     justify-content: center;
   }
 `;

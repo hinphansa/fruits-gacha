@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+
+import { RollButton } from "./RollButton";
+import { ResetButton } from "./ResetButton";
 import { StyledButton } from "./shared/StyledButton";
 
 function ButtonPanel() {
@@ -7,12 +10,12 @@ function ButtonPanel() {
     <StyledButtonPanel>
       <ButtonPanelContent>
         <div>
-          <StyledButton>Reset</StyledButton>
+          <ResetButton />
           <StyledButton>History</StyledButton>
         </div>
         <div>
-          <StyledButton>Roll</StyledButton>
-          <StyledButton>Roll x10</StyledButton>
+          <RollButton amount={1}>Roll </RollButton>
+          <RollButton amount={10}>Roll X10</RollButton>
         </div>
       </ButtonPanelContent>
     </StyledButtonPanel>
