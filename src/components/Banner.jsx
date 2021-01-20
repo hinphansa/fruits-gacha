@@ -82,7 +82,6 @@ const BannerContent = styled.div`
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.6);
-  /* border: solid 1px rgba(31, 38, 135, 0.6); */
   box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.6);
 
   p {

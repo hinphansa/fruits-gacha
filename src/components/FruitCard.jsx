@@ -31,7 +31,6 @@ function FruitCard(props) {
   );
 }
 
-// card ratio = 9 : 13
 const CardContainer = styled.div`
   ${({ thumbnail }) => {
     if (thumbnail) {

@@ -16,7 +16,6 @@ const HistoryAmount = React.memo(({ R, SR, SSR }) => {
 
 const StyledAmount = styled.div`
   width: 500px;
-  /* background: blue; */
 `;
 
 export { HistoryAmount };
