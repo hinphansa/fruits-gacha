@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { RollButton } from "./RollButton";
-import { ResetButton } from "./ResetButton";
-import { StyledButton } from "./shared/StyledButton";
+import { RollButton } from "./button/RollButton";
+import { ResetButton } from "./button/ResetButton";
+import { HistoryButton } from "./button/HistoryButton";
 
 function ButtonPanel() {
   return (
@@ -11,7 +11,7 @@ function ButtonPanel() {
       <ButtonPanelContent>
         <div>
           <ResetButton />
-          <StyledButton>History</StyledButton>
+          <HistoryButton>History</HistoryButton>
         </div>
         <div>
           <RollButton amount={1}>Roll </RollButton>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyledButton } from "./shared/StyledButton";
+import { StyledButton } from "../shared/StyledButton";
 import {
   Slide,
   Dialog,
@@ -26,7 +26,7 @@ function ResetButton() {
 
   return (
     <div>
-      <StyledButton onClick={clearHistory}>Clear</StyledButton>
+      <StyledButton onClick={clearHistory}>Reset</StyledButton>
       <Dialog
         open={open}
         onClose={handleClose}

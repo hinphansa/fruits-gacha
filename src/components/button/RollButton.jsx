@@ -2,11 +2,10 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 import { useModal, Modal } from "react-morphing-modal";
-import "react-morphing-modal/dist/ReactMorphingModal.css";
 
-import { roll } from "../function/roll";
-import { StyledButton } from "./shared/StyledButton";
-import { GachaModal } from "./GachaModal";
+import { roll } from "../../function/roll";
+import { RollModal } from "./RollModal";
+import { StyledButton } from "../shared/StyledButton";
 
 function RollButton(props) {
   const { children, amount } = props;
@@ -18,7 +17,7 @@ function RollButton(props) {
 
     // Add timestamp
     result.forEach((element) => {
-      element["date"] = date;
+      element["timestamp"] = date;
       return element;
     });
 
@@ -64,7 +63,7 @@ function RollButton(props) {
         {children}
       </StyledButton>
       <Modal {...modalProps}>
-        <GachaModal items={items} />
+        <RollModal items={items} />
       </Modal>
     </Container>
   );

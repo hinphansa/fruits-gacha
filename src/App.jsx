@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { Header } from "./components/Header";
 import { Banner } from "./components/Banner";
 import { ButtonPanel } from "./components/ButtonPanel";
+import "react-morphing-modal/dist/ReactMorphingModal.css";
 
 function App() {
   return (

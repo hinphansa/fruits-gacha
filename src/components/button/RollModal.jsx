@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { FruitCard } from "./FruitCard";
-import { StyledButton } from "./shared/StyledButton";
+import { FruitCard } from "../FruitCard";
+import { StyledButton } from "../shared/StyledButton";
 
-const GachaModal = React.memo(({ items }) => {
+const RollModal = React.memo(({ items }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -16,26 +16,26 @@ const GachaModal = React.memo(({ items }) => {
 
   return (
     <React.Fragment>
-      <GachaModalContainer>
+      <RollModalContainer>
         <GachaCards className="gacha-cards" middle={items.length === 1}>
           {items.map((fruit, index) => {
             return (
               <FruitCard
                 key={`gacha-card-${index}`}
+                open={open}
                 fruit={fruit}
                 front={false}
-                open={open}
               />
             );
           })}
         </GachaCards>
         <StyledButton onClick={handleOpen}>Open All</StyledButton>
-      </GachaModalContainer>
+      </RollModalContainer>
     </React.Fragment>
   );
 });
 
-const GachaModalContainer = styled.div`
+const RollModalContainer = styled.div`
   width: 100%;
   height: fit-content;
 
@@ -56,8 +56,8 @@ const GachaCards = styled.div`
   max-width: 990px;
 
   justify-content: center;
-  display: grid !important;
   grid-template-columns: repeat(auto-fill, 190px);
+  display: ${({ middle }) => (middle ? "flex" : "grid !important")};
 `;
 
-export { GachaModal };
+export { RollModal };
